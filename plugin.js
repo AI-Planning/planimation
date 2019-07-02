@@ -16,6 +16,7 @@ var PLANIMATION_HELP_MODEL=`
           <li>Animate the uploaded plan</li>
           <li>Download/upload the animation data</li>
         </ul>
+        <p>Click [<a href="https://github.com/planimation/documentation/tree/master/Demo%20Files" target="_blank">here</a>] to download the Demo files.</p>
 		<hr class="style1">
     <strong>Contribute to Planimation</strong>
         <p>Planimation is a modular and extensible open source framework to visualise sequential solutions of planning problems specified in PDDL. It introduces a preliminary declarative PDDL-like animation profile specification, expressive

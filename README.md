@@ -10,7 +10,7 @@ This folder contains the plugin for http://editor.planning.domains.
 ## How to use this plugin
 
 1. Go to http://editor.planning.domains
-2. Click plugin button on the top menu and install the Planimation
+2. Click plugin button on the top menu and install Planimation
 3. Click Planimation button on the top menu to start Planimation
 4. Upload Domain, Problem, and Animation PDDL to animate the plan
 
