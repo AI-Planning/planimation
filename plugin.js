@@ -165,7 +165,7 @@ function showPlanimation() {
 		html +='<script type="text/javascript">';
 		html +=' </script> </head> <body> <iframe scrolling="no" style="overflow:hidden" id=';
 		html +='"'+iframe_id+'"'
-		html +=' src="https://planning-visualisation.herokuapp.com/index.html"></iframe> </body></html>';		
+		html +=' src="https://planimation.planning.domains/"></iframe> </body></html>';		
         $('#' + editor_name).html(html);
         window.toastr.success('Planimation Window Created!');
         window.toastr.success('First time loading unity (wait 10s)');
