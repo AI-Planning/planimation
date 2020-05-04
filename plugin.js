@@ -16,8 +16,10 @@ var PLANIMATION_HELP_MODEL=`
           <li>Animate a text based uploaded plan compliant with the International Planning Competitions output: One grounded action per line </li>
           <li>Upload a saved animation file from planimation</li>
         </ul>
-        <p>Click [<a href="https://github.com/planimation/documentation/tree/master/Demo%20Files" target="_blank">here</a>] to download animation profiles for few domains, or [<a href="tinyurl.com/yxlt96fp" target="_blank">here</a>] to open a session with a Blocksworld example ready to planimate.</p>
-		<hr class="style1">
+        <p>Click [<a href="https://github.com/planimation/documentation/tree/master/AnimationProfiles" target="_blank">here</a>] to download <strong>animation profiles</strong> for few domains, or [<a href="tinyurl.com/yxlt96fp" target="_blank">here</a>] to open a session with a Blocksworld example ready to planimate. You can also start a new file in the editor typing <strong>(animattion </strong> and use a snippet autocomplete template.</p> 
+    <hr class="style1">
+    <IMG src="https://github.com/planimation/documentation/raw/master/docs/images/readme/demo.gif">
+    <hr class="style1">
     <strong>Contribute to Planimation</strong>
         <p>Planimation is a modular and extensible open source framework to visualise sequential solutions of planning problems specified in PDDL. It introduces a preliminary declarative PDDL-like animation profile specification, expressive
 enough to synthesise animations of arbitrary initial states and goals of a benchmark with just a single profile. </p>
@@ -45,8 +47,8 @@ var PLANIMATION_MODEL =`
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" style="display:inline" id="chooseFilesModalLabel">Planimate your plan</h4>
-        <a onclick="$('#planimationhelpModal').modal(true)"><span class="glyphicon glyphicon-question-sign" style="cursor: pointer; top:7px !important; left:7px;font-size:25px;"aria-hidden="true"></span></a>
+        <h4 class="modal-title" style="display:inline" id="chooseFilesModalLabel">Planimate your plan</h4> | 
+        <a onclick="$('#planimationhelpModal').modal(true)">  more info  <span class="glyphicon glyphicon-question-sign" style="cursor: pointer; top:7px !important; left:7px;font-size:25px;"aria-hidden="true"></span></a>
     
       </div>
       <div class="modal-body">
