@@ -121,7 +121,7 @@ var iframe_id = ''
 var iframe_counter = 0
 
 // function to load files into independent iframe
-function loadFileUnity(){
+function loadFile(){
           var planimation_iframe=document.getElementById(iframe_id.toString());
           var domText = window.ace.edit($('#domainPlanimationSelection').find(':selected').val()).getSession().getValue();
           var probText = window.ace.edit($('#problemPlanimationSelection').find(':selected').val()).getSession().getValue();
@@ -135,8 +135,7 @@ function loadFileUnity(){
           }else{
             planText=" ";
           }
-          var message={"domText":domText,"probText":probText,"animateText":animateText,"planText":planText,"solverURL": window.planimationURL};
-
+          var message={"domain":domText,"problem":probText,"animation":animateText,"plan":planText,"url": window.planimationURL};
           planimation_iframe.contentWindow.postMessage(message,"*");
           window.toastr.success("Start Planimation!");
       }
@@ -161,16 +160,17 @@ function showPlanimation() {
 		iframe_id += 'planimation_iframe'+iframe_counter.toString();
         html +='<html lang="en-us"> <head> <meta charset="utf-8"> <title>Planning Visualiser</title> <style> @media screen and (max-width: 1399px) {#';
 		html +=iframe_id;
-		html +='{ width:100%; height:640px;}} @media screen and (min-width: 1400px) {#';
+		html +='{ width:100%; height:640px;}} @media screen and (min-width: 1200px) {#';
 		html +=iframe_id;
 		html +='{ width:1200px;height:640px; }} </style> ';
 		html +='<script type="text/javascript">';
 		html +=' </script> </head> <body> <iframe scrolling="no" style="overflow:hidden" id=';
 		html +='"'+iframe_id+'"'
-		html +=' src="https://planimation.planning.domains/"></iframe> </body></html>';		
+		html +=' src="http://planimation.planning.domains/load"></iframe> </body></html>';		
         $('#' + editor_name).html(html);
+        changeDocument(editor_name);
         window.toastr.success('Planimation Window Created!');
-        window.toastr.success('First time loading unity (wait 10s)');
+       
     });
 
     return;
@@ -360,11 +360,11 @@ define(function () {
                 window.planimationSolverStyled = true;
             }
             
-            //Send file to Planimation Unity window when unity load properly
+            //Send file to Planimation window when page is loaded properly
             window.addEventListener("message", function(event) { 
              
                         if (event.origin!= "http://editor.planning.domains"){
-                            if (event.data.action==="loadfile"){loadFileUnity()}
+                            if (event.data.action==="loadfile"){loadFile()}
                         }
                         }, false);
 
