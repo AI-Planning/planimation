@@ -166,7 +166,7 @@ function showPlanimation() {
 		html +='<script type="text/javascript">';
 		html +=' </script> </head> <body> <iframe scrolling="no" style="overflow:hidden" id=';
 		html +='"'+iframe_id+'"'
-		html +=' src="http://planimation.planning.domains/load"></iframe> </body></html>';		
+		html +=' src="https://planimation.planning.domains/load"></iframe> </body></html>';		
         $('#' + editor_name).html(html);
         changeDocument(editor_name);
         window.toastr.success('Planimation Window Created!');
