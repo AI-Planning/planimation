@@ -107,7 +107,7 @@ var PLANIMATION_MODEL =`
       <br/>
 
       <div class="modal-footer"  >
-        <a href="http://planimation.planning.domains/" style="float:left" target="_blank">Try Planimation Web App</a>
+        <a href="https://planimation.planning.domains/" style="float:left" target="_blank">Try Planimation Web App</a>
         <button type="button" class="btn btn-default"  data-dismiss="modal">Cancel</button>
       </div>
     </div>
