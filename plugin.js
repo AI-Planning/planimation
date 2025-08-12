@@ -276,9 +276,8 @@ function on_change(event){
 define(function () {
 
     // Use this as the default solver url
-    if (!window.planimationURL) {
-      window.planimationURL = "https://solver.planning.domains:5001/package/dual-bfws-ffparser/solve";
-    }
+    window.planimationURL = "https://solver.planning.domains:5001/package/dual-bfws-ffparser/solve";
+
 
       // Use a flag to only insert styles once
     window.planimationSolverStyled = false;
