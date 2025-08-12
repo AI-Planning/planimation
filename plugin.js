@@ -86,10 +86,23 @@ var PLANIMATION_MODEL =`
 
          
 
-        <div id="plannerURLInput" class="input-group">
-          <input type="radio" id="urlradio" name="planradio"  onchange="on_change(this)" checked style="display:flex;position:relative;top:-10px;margin-left:15px;margin-right:-10px;">
+        <div class="input-group">
           <span class="input-group-addon" id="customPlannerLabel">Custom Planner URL</span>
-          <input id="plannerPlanimationURL" type="text" class="form-control" aria-describedby="customPlannerLabel" placeholder="http://solver.planning.domains/solve">
+
+          <input id="plannerPlanimationURL" type="text" class="form-control" aria-describedby="customPlannerLabel"
+            placeholder="Please enter a custom planner URL">
+
+          <div class="input-group-btn">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ▼
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#" onclick="selectPlanner('BFWS')">BFWS--FF-parser version</a></li>
+                <li><a href="#" onclick="selectPlanner('LAMA')">LAMA-first: satisficing planner without solution improvement</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
 
 <br/>
@@ -148,6 +161,20 @@ function runPlanimation() {
     $('#chooseFilesPlanimationModel').modal('toggle');
     showPlanimation();
 
+}
+
+// select different url
+function selectPlanner(plannerKey) {
+  if (plannerKey === "BFWS") {
+    window.planimationURL = "https://solver.planning.domains:5001/package/dual-bfws-ffparser/solve";
+    $('#plannerPlanimationURL').val(window.planimationURL)
+  } else if (plannerKey === "LAMA") {
+    window.planimationURL = "https://solver.planning.domains:5001/package/lama-first/solve";
+    $('#plannerPlanimationURL').val(window.planimationURL)
+  } else {
+    window.planimationURL = "https://solver.planning.domains:5001/package/dual-bfws-ffparser/solve";
+    $('#plannerPlanimationURL').val(window.planimationURL)
+  }
 }
 
 // run over all process and communicate with external process to generate plan
@@ -249,7 +276,9 @@ function on_change(event){
 define(function () {
 
     // Use this as the default solver url
-    window.planimationURL = "http://solver.planning.domains/solve";
+    if (!window.planimationURL) {
+      window.planimationURL = "https://solver.planning.domains:5001/package/dual-bfws-ffparser/solve";
+    }
 
       // Use a flag to only insert styles once
     window.planimationSolverStyled = false;
